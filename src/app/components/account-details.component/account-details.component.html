@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header d-flex align-items-center justify-content-between">
+        Balance viewer
+      </div>
+      <div class="card-block d-flex">
+        <table class="table">
+          <thead>
+            <tr>
+              <td *ngFor=" let key of accountList">
+                {{key.AccountName}}
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td *ngFor=" let res of accountList">
+                Rs {{res.Amount}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

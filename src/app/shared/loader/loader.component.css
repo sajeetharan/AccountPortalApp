@@ -1,0 +1,9 @@
+.loader-hidden {
+	visibility: hidden;
+}
+
+
+.loader {
+	top: 40%;
+	background: #394247;
+}

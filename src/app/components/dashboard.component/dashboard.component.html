@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header d-flex align-items-center justify-content-between">
+        Report viewer
+      </div>
+      <div class="card-block d-flex">
+        <div class="row">
+          <div class="col-md-6">
+            <div>
+              From Date:
+            </div>
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" (ngModelChange)="fromDateChange()" name="dp" [(ngModel)]="fromDate" ngbDatepicker #fromd="ngbDatepicker">
+                  <button class="input-group-addon" (click)="fromd.toggle()" type="button">
+                        <img src="assets/img/calendar-icon.png" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <div>
+              To Date:
+            </div>
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" (ngModelChange)="toDateChange()" name="dp" [(ngModel)]="toDate" ngbDatepicker #Tod="ngbDatepicker">
+                  <button class="input-group-addon" (click)="Tod.toggle()" type="button">
+                        <img src="assets/img/calendar-icon.png" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+      <canvas *ngIf="datasets.length > 0" baseChart class="chart" [datasets]="datasets" [labels]="lineChartLabels" [options]="lineChartOptions"
+        [colors]="lineChartColours" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+
+    </div>
+  </div>
+</div>

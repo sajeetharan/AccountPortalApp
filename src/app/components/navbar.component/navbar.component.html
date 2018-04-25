@@ -1,0 +1,30 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand">
+    <div class="logo">
+      <a><img class="logo-img" src="../favicon.ico"></a>
+    </div>
+  </a>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul *ngIf="isLoggedIn" class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <p class="nav-link">LoggedIn User: {{ loggedInUser }}</p>
+      </li>
+      <li *ngIf="role === 'Regular'" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="accounts">Details</a>
+      </li>
+      <li *ngIf="role === 'Admin'" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="upload">Upload</a>
+      </li>
+      <li *ngIf="role === 'Admin'" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="dashboard">Report</a>
+      </li>
+      <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="login"  (click)="onLogoutClick()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
